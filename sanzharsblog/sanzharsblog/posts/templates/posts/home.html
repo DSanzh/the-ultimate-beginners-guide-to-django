@@ -1,0 +1,16 @@
+<h1>Welcome to Sanzhar's Blog</h1>
+
+<h2>Latest Posts</h2>
+
+{% for post in posts.all %}
+
+{{ post.title }}
+<br>
+{{ post.pub_date_pretty }}
+<br>
+    <img src="{{ post.image.url }}">
+    <br>
+{{ post.summary }}
+<br>
+<br>
+{% endfor %}
