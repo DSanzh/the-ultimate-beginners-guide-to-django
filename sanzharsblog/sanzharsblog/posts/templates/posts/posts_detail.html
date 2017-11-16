@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'about' %}">About</a>
+        <a class="nav-link" href="#">About</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://dsanzh.github.com">Online CV</a>
@@ -36,23 +36,31 @@
   <body>
 
   <div class="container">
-    <h1 class="text-center">Welcome to Sanzhar's Blog!</h1>
-    {% load static %}
-      <img src="{% static 'posts/bg.jpg' %}" class="img-fluid rounded mx-auto d-block" style="max-height: 300px">
-    <h2>Latest Posts</h2>
-    {% for post in posts.all %}
-        <a href="{% url 'post_detail' post.id %}"><h3>{{ post.title }}</h3></a>
+        <a href="{% url 'post_detail' post.id %}"><h1>{{ post.title }}</h1></a>
         <br>
         <span class="glyphicon glyphicon-time"></span> <strong>{{ post.pub_date_pretty }}</strong>
         <br>
-            <img src="{{ post.image.url }}" class="img-fluid rounded mx-auto d-block" style="max-height: 150px;">
+            <img src="{{ post.image.url }}" class="img-fluid rounded mx-auto d-block" style="max-height: 300px;">
             <br>
         {{ post.summary }}
         <br>
         <br>
-    {% endfor %}
-  </div>
+        <div id="disqus_thread"></div>
+        <script>
 
+        var disqus_config = function () {
+            this.page.identifier = 'post-{{ post.id }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sanzharsblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -60,3 +68,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
 </html>
+
