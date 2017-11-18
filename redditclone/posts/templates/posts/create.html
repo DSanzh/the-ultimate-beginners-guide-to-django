@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>New Post</h1>
+
+{% if error %}
+{{ error }}
+<br>
+{% endif %}
+
+<form method="POST" action="{% url 'posts:create' %}">
+    {% csrf_token %}
+    {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+    {% endif %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Title</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" name="title">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">URL</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="url" name="url">
+  </div>
+
+  <button type="submit" class="btn btn-primary" name="Post">Submit</button>
+</form>
+
+{% endblock %}
