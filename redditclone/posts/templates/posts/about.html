@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <div class="container">
+      <!-- Just an image -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="{% url 'home' %}">Sanzhar's Blog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://dsanzh.github.com">Online CV</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+<body>
+<div class="container">
+    <h1>About Me:</h1>
+    <ul class="">
+        <li class="nav-item">
+           <h4>Full Name:</h4>
+            Dauylov Sanzhar
+        </li>
+        <li class="nav-item">
+            <h4>Who I am?</h4>
+            iOS Developer, that learning Backend(Django, Python)
+        </li>
+        <li class="nav-item">
+            <h4>My CV</h4>
+            <a href="http://dsanzh.github.com/">on github</a>
+        </li>
+    </ul>
+    <h1>About project</h1>
+    <ul>
+        <li>
+            <h4>Project name:</h4>
+            Blog site
+        </li>
+        <li>
+            <h4>Project description:</h4>
+            This is 2st project on Django from <a href="https://www.udemy.com/the-ultimate-beginners-guide-to-django-python-web-dev-website">this</a> course.
+            On this project, I used local database mysql, creating dynamic webpage which show detail of posts, introduce with bootstrap, create model and so on.
+        </li>
+    </ul>
+    <h1>About Course:</h1>
+    <ul>
+        <li>
+            <h4>Name:</h4>
+            The Ultimate Beginner's Guide to Django
+        </li>
+        <li>
+            <h4>Description:</h4>
+            Lectures: 83 <br>
+            Video: 9 hours <br>
+            Skill level: Beginner Level
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+{% endblock %}
